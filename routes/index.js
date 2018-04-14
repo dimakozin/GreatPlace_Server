@@ -35,4 +35,10 @@ module.exports = (app, db) => {
                 })
         })
 
+        app.get('/api/getPlaces', (request, response) => {
+            db.collection('places').find({}).toArray((err, result) => {
+              response.send(result.slice(0, request.query.amount))
+            })
+        })
+
 }
