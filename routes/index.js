@@ -1,4 +1,6 @@
-const path   = require('path')
+const path = require('path')
+
+app.use('/static', express.static('static'));
 
 answer = {
         places : [
