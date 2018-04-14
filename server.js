@@ -1,22 +1,19 @@
 const express = require('express')
+const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
 const app = express()
+app.use(bodyParser.urlencoded({ extended: true  }));
+app.use(bodyParser.json())
+
+const db = require('./config/db.js')
 const port = 3000
 
-answer = {
-        places : [
-        {"Description":"Test place", "Coordinates":"59.201085, 39.873239", "img":"http://betosteel.ru/wp-content/uploads/2017/06/69-696x435.jpg"},
-        {"Description":"Anothre test place", "Coordinates":"59.201085, 39.873239", "Rating":"5"}
-    ]
-}
 
-app.get('/', (request, responce) => {
-        responce.send(answer)
-})
-
-app.listen(port, (err) => {
-        if(err){
-                return console.log('something bad', err)
-        }
-
+MongoClient.connect(db.url,(err, database) => {
+  if(err) return console.log(err)
+  require('./routes')(app, database)
+  
+  app.listen(port, () => {
         console.log(`server is listening on ${port}`)
-})
+  }
+)})
