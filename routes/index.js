@@ -17,6 +17,14 @@ module.exports = (app, db) => {
                 response.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'))
         })
 
+        app.get('/gallery', (request, response) => {
+                response.sendFile(path.resolve(__dirname, '..', 'views', 'gallery.html'))
+        })
+
+        app.get('/maps', (request, response) => {
+                response.sendFile(path.resolve(__dirname, '..', 'views', 'maps.html'))
+        })
+
         app.get('/index.html', (request,response)=>{
                response.redirect('/')
         })
