@@ -1,3 +1,5 @@
+const path   = require('path')
+
 answer = {
         places : [
         { description : "test place", coordinates : "59.201145, 39.873853"},
@@ -8,7 +10,7 @@ answer = {
 
 module.exports = (app, db) => {
         app.get('/', (request, response) => {
-                response.send(answer)
+                response.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'))
         })
 
         app.post('/test', (request, response) => {
