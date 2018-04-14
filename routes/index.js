@@ -1,6 +1,5 @@
 const path = require('path')
-
-app.use('/static', express.static('static'));
+const express = require('express')
 
 answer = {
         places : [
@@ -11,8 +10,15 @@ answer = {
 
 
 module.exports = (app, db) => {
+
+        app.use('/static', express.static('static'));
+
         app.get('/', (request, response) => {
                 response.sendFile(path.resolve(__dirname, '..', 'views', 'index.html'))
+        })
+
+        app.get('/index.html', (request,response)=>{
+               response.redirect('/')
         })
 
         app.post('/test', (request, response) => {
