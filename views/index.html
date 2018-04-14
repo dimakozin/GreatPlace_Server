@@ -1,82 +1,157 @@
-<!DOCTYPE html>
-<html>
-<head>
-
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <title>Красивые места</title>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/cover.css" rel="stylesheet">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css"/>
+	 <link href="http://allfont.ru/allfont.css?fonts=ozhandicraftcyrillic-bt-roman" rel="stylesheet" type="text/css" />
 
-    <title>Красивые места города Вологда</title>
+	<script src="/static/js/jssor.slider-22.2.6.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="/static/css/fluid-gallery.css">
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
 
-</head>
-<body>
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
 
-<div class="container gallery-container">
+            /*responsive code begin*/
+            /*you can remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*responsive code end*/
+        };
+    </script>
 
-    <h1>Красивые места города Вологда</h1>
+  </head>
 
-    <p class="page-description text-center">Романтика вологодских улиц</p>
+  <body class="text-center">
 
-    <div class="tz-gallery">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+          <h3 class="masthead-brand"><font face="Gabriola"> Красивые места</font></h3>
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="/">Главная</a>
+			<a class="nav-link" href="/gallery">Галерея</a>
+            <a class="nav-link" href="/maps">На карте</a>
+          </nav>
+        </div>
+      </header>
 
-        <div class="row">
+<div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:-1.2%;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
+        <!-- Loading Screen -->
+        <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+            <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;">
+			</div>
 
-            <div class="col-sm-12 col-md-4">
-                <a class="lightbox">
-                    <img src="/static/images/1Vol.jpg" alt="Bridge">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox">
-                    <img src="/static/images/2Vol.jpg" alt="Park">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox">
-                    <img src="/static/images/3Vol.jpg" alt="Tunnel">
-                </a>
-            </div>
-
-            <div class="col-sm-12 col-md-8">
-                <a class="lightbox">
-                    <img src="/static/images/4Vol.jpg" alt="Traffic">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox">
-                    <img src="/static/images/5Vol.jpg" alt="Coast">
-                </a>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox">
-                    <img src="/static/images/6Vol.jpg" alt="Rails">
-                </a>
-            </div>
 
         </div>
+        <div data-u="slides" style="cursor:default;position:absolute;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <div>
+                <img data-u="image" src="/static/images/1Vol.jpg" />
+					<div style="position:absolute;top:30px;left:0;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">
+						<div class="caption">
+							<h1>Кремлевская площадь</h1>
+
+						</div>
+					</div>
+                <div style="position:absolute;top:300px;left:0;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">
+					<h2>г.Вологда, центр города</h2>
+				</div>
+            </div>
+            <div>
+                <img data-u="image" src="/static/images/2Vol.jpg" />
+					<div style="position:absolute;top:30px;left:0;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">
+						<div class="caption">
+							<h1>Посидим поокаем</h1>
+						</div>
+					</div>
+                <div style="position:absolute;top:300px;left:0;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">
+					<h2>г.Вологда, за кремлевским парком на берегу реки Вологда</h2>
+				</div>
+            </div>
+			<div>
+                <img data-u="image" src="/static/images/3Vol.jpg" />
+					<div style="position:absolute;top:30px;left:0;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">
+						<div class="caption">
+							<h1>Памятник 800лет г.Вологда</h1>
+
+						</div>
+					</div>
+                <div style="position:absolute;top:300px;left:0;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">
+					<h2>Пересечение ул.Воровского и ул.Бурмагиных на берегу реки Вологда</h2>
+				</div>
+            </div>
+			<div>
+                <img data-u="image" src="/static/images/4Vol.jpg" />
+					<div style="position:absolute;top:30px;left:0;width:480px;height:120px;z-index:0;font-size:50px;color:#ffffff;line-height:60px;">
+						<div class="caption">
+							<h1>Ферапонтов Монастырь</h1>
+
+						</div>
+					</div>
+                <div style="position:absolute;top:300px;left:0;width:480px;height:120px;z-index:0;font-size:30px;color:#ffffff;line-height:38px;">
+					<h2>г.Вологда, Прилуки</h2>
+				</div>
+            </div>
+	    </div>
+
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:0;right:0;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:0;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:0;width:40px;height:58px;" data-autocenter="2"></span>
+    </div>
+<script type="text/javascript">jssor_1_slider_init();</script>
 
 
+          <a class="btn btn-lg btn-secondary" href="/gallery">Узнать больше</a>
+        </p>
+
+
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+          <p>GreatPlace</a></p>
+        </div>
+      </footer>
     </div>
 
-</div>
 
-<!-- HelloPreload http://hello-site.ru/preloader/ -->
-<style type="text/css">#hellopreloader>p{display:none;}#hellopreloader_preload{display: block;position: fixed;z-index: 99999;top: 0;left: 0;width: 100%;height: 100%;min-width: 1000px;background: #FDE3A7 url(http://hello-site.ru//main/images/preloads/three-dots.svg) center center no-repeat;background-size:101px;}</style>
-<div id="hellopreloader"><div id="hellopreloader_preload"></div><p><a href="http://hello-site.ru">Hello-Site.ru. Бесплатный конструктор сайтов.</a></p></div>
-<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1000);};</script>
-<!-- HelloPreload http://hello-site.ru/preloader/ -->
 
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+  </body>
 </html>
