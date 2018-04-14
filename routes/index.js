@@ -29,9 +29,10 @@ module.exports = (app, db) => {
                response.redirect('/')
         })
 
-        app.post('/test', (request, response) => {
-                console.log(request.body)
-                response.send(request.body)
+        app.get('/api/popular', (request, response) => {
+                db.collection('places').find({}).toArray((err, result) => {
+                  response.send(result)
+                })
         })
 
 }
