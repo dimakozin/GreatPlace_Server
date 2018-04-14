@@ -1,0 +1,32 @@
+html, body{
+            width: 100%; padding: 0; margin: 0;
+            font-family: Arial;
+        }
+
+        
+            /* Оформление меню (начало)*/
+        .menu {
+            list-style: none;
+            padding: 5px;
+
+            margin: 0;
+        }
+        .submenu {
+            list-style: none;
+
+            margin: 0 0 0 20px;
+            padding: 0;
+        }
+        .submenu li {
+            font-size: 90%;
+        }
+            /* Оформление меню (конец)*/
+
+
+        #map {
+            width: 1000px; height: 1000px; padding: 0; margin: 0;
+        }
+
+        #Onmap{
+            width: 100%; height: 100px; color: aqua;
+        }
