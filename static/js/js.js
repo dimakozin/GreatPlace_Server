@@ -1,24 +1,22 @@
-/*var myMap;
+var groups = []
 
-// Дождёмся загрузки API и готовности DOM.
-ymaps.ready(init);
+function loadAndInit(){
+  $.ajax({
+    type: 'get',
+    url: '/api/popular',
+    success : (data) => {
+      groups.push({
+        name: "Популярные места",
+        style : "islands#redIcon",
+        items : data
+      })
 
-function init () {
-    // Создание экземпляра карты и его привязка к контейнеру с
-    // заданным id ("map").
-    myMap = new ymaps.Map('map', {
-        // При инициализации карты обязательно нужно указать
-        // её центр и коэффициент масштабирования.
-        center: [55.76, 37.64], // Москва
-        zoom: 10
-    }, {
-        searchControlProvider: 'yandex#search'
-    });
+      init()
+    }
+  })
+}
 
-
-}*/
-
-ymaps.ready(init);
+ymaps.ready(loadAndInit);
 
 function init() {
 
@@ -31,7 +29,7 @@ function init() {
         }),
         // Контейнер для меню.
         menu = $('<ul class="menu"/>');
-        
+
     for (var i = 0, l = groups.length; i < l; i++) {
         createMenuGroup(groups[i]);
     }
@@ -71,7 +69,7 @@ function init() {
         // Пункт подменю.
         var submenuItem = $('<li><a href="#">' + item.name + '</a></li>'),
         // Создаем метку.
-            placemark = new ymaps.Placemark(item.center, { balloonContent: item.name });
+            placemark = new ymaps.Placemark(item.center, { balloonContentHeader: item.name, balloonContentBody : item.description });
 
         // Добавляем метку в коллекцию.
         collection.add(placemark);
@@ -95,10 +93,3 @@ function init() {
     // Выставляем масштаб карты чтобы были видны все группы.
     myMap.setBounds(myMap.geoObjects.getBounds());
 }
-
-$.ajax({ 
-url: "25.62.33.136:3000", 
-success: function(data){ 
-console.log( "Прибыли данные: " + data ); 
-} 
-})
