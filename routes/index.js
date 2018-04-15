@@ -1,14 +1,6 @@
 const path = require('path')
 const express = require('express')
 
-answer = {
-        places : [
-        { description : "test place", coordinates : "59.201145, 39.873853"},
-        { description : "another test place", coordinates : "59.201145, 39.873853", img: "https://avatars.mds.yandex.net/get-ugc/217759/2a0000015faf7b98b1ee8b94dcb5703fd1b0/X5L"}
-        ]
-}
-
-
 module.exports = (app, db) => {
 
         app.use('/static', express.static('static'));
@@ -25,8 +17,8 @@ module.exports = (app, db) => {
                 response.sendFile(path.resolve(__dirname, '..', 'views', 'maps.html'))
         })
 
-        app.get('/index.html', (request,response)=>{
-               response.redirect('/')
+        app.get('/feedback', (request, response) => {
+                response.sendFile(path.resolve(__dirname, '..', 'views', 'feedback.html'))
         })
 
         app.get('/api/popular', (request, response) => {
