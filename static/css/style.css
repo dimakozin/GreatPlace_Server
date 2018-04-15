@@ -308,7 +308,10 @@ a.button16:active {
 
 .onmap{
     width: 100%;
-    height: 1000px;
+}
+
+ul.menu{
+        text-align: left
 }
 
 
