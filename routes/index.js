@@ -33,4 +33,10 @@ module.exports = (app, db) => {
             })
         })
 
+        app.get('/api/getPlacesBy', (request, response) => {
+                db.collection('places').find({category : request.query.category}).toArray((err, result) => {
+                        response.send(result)
+                })
+        })
+
 }

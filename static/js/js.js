@@ -1,19 +1,93 @@
 var groups = []
+var flags = 0
+
+function setFlag(){
+  flags++
+  if(flags==4)
+          init()
+}
 
 function loadAndInit(){
   $.ajax({
     type: 'get',
-    url: '/api/popular',
+    url: '/api/getPlacesBy',
+    data : {
+      category : "Парки"
+    },
     success : (data) => {
+
       groups.push({
-        name: "Популярные места",
+        name: "Парки",
+        style : "islands#greenIcon",
+        items : data
+      })
+
+      setFlag()
+
+    }
+  })
+
+  $.ajax({
+    type: 'get',
+    url: '/api/getPlacesBy',
+    data : {
+      category : "Секретные места"
+    },
+    success : (data) => {
+
+      groups.push({
+        name: "Секретные места",
+        style : "islands#grayIcon",
+        items : data
+      })
+
+    setFlag() 
+
+    }
+  })
+
+
+  $.ajax({
+    type: 'get',
+    url: '/api/getPlacesBy',
+    data : {
+      category : "Культурные достопримечательности"
+    },
+    success : (data) => {
+
+      groups.push({
+        name: "Культурные достопримечательности",
+        style : "islands#blueIcon",
+        items : data
+      })
+
+      setFlag()
+
+    }
+  })
+
+  $.ajax({
+    type: 'get',
+    url: '/api/getPlacesBy',
+    data : {
+      category : "Атмосферные заведения"
+    },
+    success : (data) => {
+
+      groups.push({
+        name: "Атмосферные заведения",
         style : "islands#redIcon",
         items : data
       })
 
-      init()
+      setFlag()
+
     }
   })
+
+
+
+
 }
 
 ymaps.ready(loadAndInit);
